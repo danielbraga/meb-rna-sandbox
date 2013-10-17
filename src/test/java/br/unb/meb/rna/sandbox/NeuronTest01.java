@@ -25,11 +25,14 @@ public class NeuronTest01 {
         double[] weight5 = new double[]{0.5, 0.5};
         double[] weight6 = new double[]{0.6, 0.6}; //Start OR with Degrau com limiar 0.5
         double[] weight7 = new double[]{1, 1};
+        double[] weight8 = new double[]{1.4, 1.4};
 
-        Object[] weights = new Object[]{weight1, weight2, weight3, weight4, weight5, weight6, weight7};
+        //Object[] weights = new Object[]{weight1, weight2, weight3, weight4, weight5, weight6, weight7};
+        Object[] weights = new Object[]{weight8};
 
 
-        Function t = new DegrauFunction(0.5);
+        //Function t = new DegrauFunction(0.5);
+        Function t = new TagenteSigmoidalFunction();
 
         for (Object input : inputs) {
             double[] in = (double[]) input;

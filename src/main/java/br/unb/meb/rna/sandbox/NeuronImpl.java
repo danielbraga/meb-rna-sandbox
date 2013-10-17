@@ -1,7 +1,11 @@
 package br.unb.meb.rna.sandbox;
 
+import br.unb.meb.rna.sandbox.api.Connection;
 import br.unb.meb.rna.sandbox.api.Function;
 import br.unb.meb.rna.sandbox.api.Neuron;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by daniel on 10/8/13.
@@ -15,6 +19,8 @@ public class NeuronImpl implements Neuron {
     private double[] inputs;
 
     private double[] weights;
+
+    private List<Connection> connections = new ArrayList<Connection>();
 
     public NeuronImpl(Function transfer) {
         this.transfer = transfer;
@@ -43,17 +49,36 @@ public class NeuronImpl implements Neuron {
     }
 
     @Override
-    public double run(double[] inputs) {
+    public double calculate(double[] inputs) {
         this.inputs = inputs.clone();
-        return run();
+        return calculate();
     }
 
     @Override
-    public double run() {
+    public double calculate() {
         double sum = sum(this.inputs, this.weights);
         double y = transfer.discrete(sum);
 
         return y;
+    }
+
+    @Override
+    public Neuron add(Connection conn) {
+        if (conn != null) {
+            if (!connections.contains(conn)) {
+                connections.add(conn);
+            }
+        }
+        return this;
+    }
+
+    @Override
+    public Neuron conectTo(Neuron neuron) {
+        if (neuron != null) {
+            Connection c = new ConnectionImpl(this, neuron);
+            add(c);
+        }
+        return this;
     }
 
     private double sum(double[] inputs, double[] weights) {

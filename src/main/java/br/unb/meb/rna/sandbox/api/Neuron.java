@@ -9,8 +9,12 @@ public interface Neuron extends Cloneable {
 
     public Neuron weight(double[] weights);
 
-    public double run(double[] inputs);
+    public double calculate(double[] inputs);
 
-    public double run();
+    public double calculate();
+
+    public Neuron add(Connection conn);
+
+    public Neuron conectTo(Neuron neuron);
 
 }
