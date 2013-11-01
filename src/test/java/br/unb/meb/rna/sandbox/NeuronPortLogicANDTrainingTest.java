@@ -2,6 +2,7 @@ package br.unb.meb.rna.sandbox;
 
 import br.unb.meb.rna.sandbox.api.Function;
 import br.unb.meb.rna.sandbox.api.Neuron;
+import br.unb.meb.rna.sandbox.functions.TagenteSigmoidalFunction;
 
 /**
  * Created by daniel on 10/16/13.
@@ -50,7 +51,7 @@ public class NeuronPortLogicANDTrainingTest {
 
         //Loop of training
         while (training) {
-            output = neuron.run();
+            output = neuron.calculate();
 
             error_rms = Math.abs(expect - output);
             if (error_rms <= precision) {

@@ -2,6 +2,7 @@ package br.unb.meb.rna.sandbox;
 
 import br.unb.meb.rna.sandbox.api.Function;
 import br.unb.meb.rna.sandbox.api.Neuron;
+import br.unb.meb.rna.sandbox.functions.TagenteSigmoidalFunction;
 
 /**
  * Created by daniel on 10/16/13.
@@ -52,7 +53,7 @@ public class NeuronTest01 {
                 double[] we = (double[]) weight;
 
                 Neuron neuron = new NeuronImpl(t, in, we);
-                double output = neuron.run();
+                double output = neuron.calculate();
                 printvar(in, we, output);
             }
         }

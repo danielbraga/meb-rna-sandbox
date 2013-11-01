@@ -13,6 +13,7 @@ public interface Network {
     public Network add(int index, Layer layer) throws IndexOutOfBoundsException;
     public Network remove(Layer layer);
     public Network remove(int index) throws IndexOutOfBoundsException;
+    public int size();
     public double[] calculate();
     public double[] calculate(double[] inputs);
 

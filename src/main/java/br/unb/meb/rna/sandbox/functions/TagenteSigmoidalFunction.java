@@ -1,4 +1,4 @@
-package br.unb.meb.rna.sandbox;
+package br.unb.meb.rna.sandbox.functions;
 
 import br.unb.meb.rna.sandbox.api.Function;
 
@@ -9,11 +9,11 @@ public class TagenteSigmoidalFunction implements Function {
 
     private double limiar;
 
-    TagenteSigmoidalFunction(double limiar) {
+    public TagenteSigmoidalFunction(double limiar) {
         this.limiar = limiar;
     }
 
-    TagenteSigmoidalFunction() {
+    public TagenteSigmoidalFunction() {
         this.limiar = 0.0;
     }
 

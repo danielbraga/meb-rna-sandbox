@@ -1,17 +1,15 @@
-package br.unb.meb.rna.sandbox;
-
-import br.unb.meb.rna.sandbox.api.Function;
+package br.unb.meb.rna.sandbox.functions;
 
 /**
  * Created by daniel on 10/16/13.
  */
 public class LogisticSigmoidalFunction extends SigmoidalFunction {
 
-    LogisticSigmoidalFunction(double limiar) {
+    public LogisticSigmoidalFunction(double limiar) {
         super(limiar);
     }
 
-    LogisticSigmoidalFunction() {
+    public LogisticSigmoidalFunction() {
         super();
     }
 

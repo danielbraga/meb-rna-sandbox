@@ -1,4 +1,4 @@
-package br.unb.meb.rna.sandbox;
+package br.unb.meb.rna.sandbox.functions;
 
 import br.unb.meb.rna.sandbox.api.Function;
 
@@ -9,11 +9,11 @@ public class SigmoidalFunction implements Function {
 
     private double limiar;
 
-    SigmoidalFunction(double limiar) {
+    public SigmoidalFunction(double limiar) {
         this.limiar = limiar;
     }
 
-    SigmoidalFunction() {
+    public SigmoidalFunction() {
         this.limiar = 0.0;
     }
 

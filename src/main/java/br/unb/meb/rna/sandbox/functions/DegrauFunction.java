@@ -1,4 +1,4 @@
-package br.unb.meb.rna.sandbox;
+package br.unb.meb.rna.sandbox.functions;
 
 import br.unb.meb.rna.sandbox.api.Function;
 
@@ -9,7 +9,7 @@ public class DegrauFunction implements Function {
 
     private double limiar;
 
-    DegrauFunction(double limiar) {
+    public DegrauFunction(double limiar) {
         this.limiar = limiar;
     }
 

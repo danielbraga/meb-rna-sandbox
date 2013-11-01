@@ -10,16 +10,12 @@ package br.unb.meb.rna.sandbox.api;
 public interface Layer {
 
     public Layer add(Neuron neuron);
-
     public Layer add(int index, Neuron neuron) throws IndexOutOfBoundsException;
-
     public Layer remove(Neuron neuron);
-
     public Layer remove(int index) throws IndexOutOfBoundsException;
-
     public int size();
-
+    public Layer defineFirstLayer();
+    public Layer defineNotFirstLayer();
     public double[] calculate();
-
     public double[] calculate(double[] inputs);
 }

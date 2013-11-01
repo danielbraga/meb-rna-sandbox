@@ -14,42 +14,40 @@ public class NeuronImpl implements Neuron {
 
     private Function transfer;
 
-    //private Function sum = new SumFunction();
-
     private double[] inputs;
 
     private double[] weights;
 
     private List<Connection> connections = new ArrayList<Connection>();
 
-    public NeuronImpl(Function transfer) {
+    public NeuronImpl(final Function transfer) {
         this.transfer = transfer;
     }
 
-    public NeuronImpl(Function transfer, double[] inputs) {
+    public NeuronImpl(final Function transfer, final double[] inputs) {
         this(transfer);
         this.inputs = inputs.clone();
     }
 
-    public NeuronImpl(Function transfer, double[] inputs, double[] weights) {
+    public NeuronImpl(final Function transfer, final double[] inputs, final double[] weights) {
         this(transfer, inputs);
         this.weights = weights.clone();
     }
 
     @Override
-    public Neuron input(double[] inputs) {
+    public Neuron input(final double[] inputs) {
         this.inputs = inputs.clone();
         return this;
     }
 
     @Override
-    public Neuron weight(double[] weights) {
+    public Neuron weight(final double[] weights) {
         this.weights = weights.clone();
         return this;
     }
 
     @Override
-    public double calculate(double[] inputs) {
+    public double calculate(final double[] inputs) {
         this.inputs = inputs.clone();
         return calculate();
     }
@@ -81,7 +79,7 @@ public class NeuronImpl implements Neuron {
         return this;
     }
 
-    private double sum(double[] inputs, double[] weights) {
+    private double sum(final double[] inputs, final double[] weights) {
         double sum = 0;
         if (inputs != null && inputs.length > 0) {
             for (int i = 0; i < inputs.length; i++) {
